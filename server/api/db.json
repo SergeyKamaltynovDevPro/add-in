@@ -1,0 +1,224 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "email": "Kane.Heaney55@yahoo.com",
+      "firstName": "Janelle",
+      "lastName": "Metz",
+      "jobTitle": "Central Functionality Liason",
+      "name": "Karli_Shanahan95",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 1,
+      "email": "Lilliana_Stracke70@yahoo.com",
+      "firstName": "Alaina",
+      "lastName": "King",
+      "jobTitle": "Dynamic Paradigm Associate",
+      "name": "Maritza.Crona",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 2,
+      "email": "Andrew54@hotmail.com",
+      "firstName": "Arnold",
+      "lastName": "Borer",
+      "jobTitle": "Investor Division Coordinator",
+      "name": "Weldon88",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 3,
+      "email": "Gia.Herzog@hotmail.com",
+      "firstName": "Murray",
+      "lastName": "Block",
+      "jobTitle": "Legacy Solutions Assistant",
+      "name": "Spencer.Zemlak66",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 4,
+      "email": "Frances_Hartmann91@yahoo.com",
+      "firstName": "Jonathon",
+      "lastName": "Wiza",
+      "jobTitle": "Forward Infrastructure Liason",
+      "name": "Jayne.Dare",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 5,
+      "email": "Richmond_Schamberger52@hotmail.com",
+      "firstName": "Kathryne",
+      "lastName": "Kerluke",
+      "jobTitle": "Central Directives Engineer",
+      "name": "Elvie_Nitzsche40",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 6,
+      "email": "Alyson1@yahoo.com",
+      "firstName": "Buster",
+      "lastName": "Boyle",
+      "jobTitle": "National Functionality Planner",
+      "name": "Nicolas.Eichmann50",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 7,
+      "email": "Diana82@gmail.com",
+      "firstName": "Arjun",
+      "lastName": "Glover",
+      "jobTitle": "Central Web Architect",
+      "name": "Geovanni_Schultz",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 8,
+      "email": "Jett20@gmail.com",
+      "firstName": "Jermaine",
+      "lastName": "Koepp",
+      "jobTitle": "Regional Infrastructure Planner",
+      "name": "Meghan_Runte",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 9,
+      "email": "Kyla39@hotmail.com",
+      "firstName": "Otis",
+      "lastName": "Jacobs",
+      "jobTitle": "Forward Optimization Associate",
+      "name": "Anabel89",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 10,
+      "email": "Kevin75@gmail.com",
+      "firstName": "Arnoldo",
+      "lastName": "Carroll",
+      "jobTitle": "Corporate Creative Associate",
+      "name": "Ada89",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 11,
+      "email": "Dorthy46@yahoo.com",
+      "firstName": "Garret",
+      "lastName": "Schroeder",
+      "jobTitle": "District Mobility Strategist",
+      "name": "Jarrell_Homenick35",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 12,
+      "email": "Luz.Senger69@hotmail.com",
+      "firstName": "William",
+      "lastName": "Kessler",
+      "jobTitle": "Customer Intranet Strategist",
+      "name": "Braden.Green",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 13,
+      "email": "Blanche_Fritsch@yahoo.com",
+      "firstName": "Kyra",
+      "lastName": "Rowe",
+      "jobTitle": "Human Applications Strategist",
+      "name": "Gerson_Gibson52",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 14,
+      "email": "Katelynn.Mosciski28@gmail.com",
+      "firstName": "Virginia",
+      "lastName": "Schultz",
+      "jobTitle": "Product Functionality Liason",
+      "name": "Salvador76",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 15,
+      "email": "Soledad.Bailey33@gmail.com",
+      "firstName": "Clifton",
+      "lastName": "Stoltenberg",
+      "jobTitle": "Human Metrics Assistant",
+      "name": "Emmanuelle.Wuckert37",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 16,
+      "email": "Oleta_Zboncak50@gmail.com",
+      "firstName": "Curt",
+      "lastName": "Wolff",
+      "jobTitle": "Dynamic Optimization Coordinator",
+      "name": "Adolf_Gaylord",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 17,
+      "email": "Davonte.Lowe@gmail.com",
+      "firstName": "Virgie",
+      "lastName": "Berge",
+      "jobTitle": "Dynamic Directives Officer",
+      "name": "Elyssa.Wilkinson",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 18,
+      "email": "Murl.Gorczany18@yahoo.com",
+      "firstName": "Delphine",
+      "lastName": "Thompson",
+      "jobTitle": "Central Brand Consultant",
+      "name": "Carrie_Yundt72",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "id": 19,
+      "email": "Clementine91@hotmail.com",
+      "firstName": "June",
+      "lastName": "Konopelski",
+      "jobTitle": "Human Response Liason",
+      "name": "Gretchen46",
+      "avatar": "http://lorempixel.com/32/32/people"
+    },
+    {
+      "email": "Office365@email.microsoftonline.com",
+      "name": "Microsoft Office 365 Team",
+      "createdAt": 1487250596710,
+      "createdBy": {
+        "email": "kamaltynov.sergey@devprokharkov.onmicrosoft.com",
+        "name": "Kamaltynov Sergey"
+      },
+      "id": 20
+    },
+    {
+      "email": "kamaltynov.sergey@devprokharkov.onmicrosoft.com",
+      "name": "Kamaltynov Sergey",
+      "createdAt": 1487691745801,
+      "createdBy": {
+        "email": "kamaltynov.sergey@devprokharkov.onmicrosoft.com",
+        "name": "Kamaltynov Sergey"
+      },
+      "id": 21
+    },
+    {
+      "email": "accounts-noreply@azureemail.microsoft.com",
+      "name": "Microsoft Azure Team",
+      "createdAt": 1488197163295,
+      "createdBy": {
+        "email": "kamaltynov.sergey@devprokharkov.onmicrosoft.com",
+        "name": "Kamaltynov Sergey"
+      },
+      "id": 22
+    }
+  ],
+  "templates":[
+    {
+      "name" : "Hello name",
+      "htmlPath" : "/mail/hello.pug"
+    },
+    {
+      "name" : "Send me email to {email}",
+      "htmlPath" : "/mail/answer.pug"
+    }
+  ]
+}

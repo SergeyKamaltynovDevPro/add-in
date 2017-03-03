@@ -1,0 +1,7 @@
+h2 Select template
+.ms-TextField
+  uif-dropdown(ng-model='vm.file')
+    uif-dropdown-option(value='{{value.htmlPath}}', ng-repeat='(key, value) in vm.templates', title='{{value.name}}') {{value.name}}
+button.ms-Button--primary.ms-Button(type='submit', ng-click='vm.insertTemplate()')
+  span.ms-Button-label Insert Template
+
