@@ -1,49 +1,56 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import routing from './templates.routes';
-export class TemplatesController {
+import routing from './loft.routes';
+export class LoftController {
   /*@ngInject*/
   constructor($http, $scope, socket, $rootScope, ngToast) {
     this.$http = $http;
     this.socket = socket;
-    this.template = null;
-    this.ngToast = ngToast;
-    this.item = Office.context.mailbox.item;
-    $scope.$on('$destroy', function () {
+    this.lofttext =null;
+    this.ngToast =ngToast;
+    $scope.$on('$destroy', function() {
 
     });
   }
 
-  insertTemplate() {
-    let self = this;
-    $.get(this.file).then((doc) => {
-      let html = jade.compile(doc);
-      this.item.to.getAsync(callback);
+  insertLoft(){
+    let self =this;
+      Office.context.mailbox.item.to.getAsync(callback);
       function callback(asyncResult) {
-        if (!asyncResult.value.length) {
+        if(!asyncResult.value.length){
           self.ngToast.danger({
             content: 'Cant get a sender'
           });
           return
         }
-        let displayName = asyncResult.value[0].displayName;
-        let emailAddress = asyncResult.value[0].emailAddress;
-        let locals = {
-          name: displayName,
-          mail: emailAddress
-        };
-        let result = html(locals);
-        self.setItemBody(result);
+
+        var displayName = asyncResult.value[0].displayName;
+        var emailAddress = asyncResult.value[0].emailAddress;
+        self.$http({
+          url: '/api/pixel',
+          method: "GET",
+          params: {email: asyncResult.value[0].emailAddress,text: self.lofttext}
+        }).then(response => {
+          var locals = {
+            name: displayName,
+            mail: emailAddress
+          };
+          var result = self.template({pixel:response.data.pxl});
+          self.setItemBody(result);
+          // var result = html(locals);
+          // self.setItemBody(result);
+        });
+
       }
 
-    });
+
   }
 
   setItemBody(body) {
     let self = this;
-    this.item.body.getTypeAsync(
-      (result) => {
-        if (result.status == Office.AsyncResultStatus.Failed) {
+    Office.context.mailbox.item.body.getTypeAsync(
+      function (result) {
+        if (result.status == Office.AsyncResultStatus.Failed){
           self.ngToast.danger({
             content: 'Cant get a sender'
           });
@@ -55,15 +62,13 @@ export class TemplatesController {
             // Body is of HTML type.
             // Specify HTML in the coercionType parameter
             // of setSelectedDataAsync.
-            this.item.body.setSelectedDataAsync(
+            Office.context.mailbox.item.body.setSelectedDataAsync(
               body,
-              {
-                coercionType: Office.CoercionType.Html,
-                asyncContext: {var3: 1, var4: 2}
-              },
+              { coercionType: Office.CoercionType.Html,
+                asyncContext: { var3: 1, var4: 2 } },
               function (asyncResult) {
                 if (asyncResult.status ==
-                  Office.AsyncResultStatus.Failed) {
+                  Office.AsyncResultStatus.Failed){
                   self.ngToast.danger({
                     content: 'Cant get a sender'
                   });
@@ -78,15 +83,13 @@ export class TemplatesController {
           }
           else {
             // Body is of text type.
-            this.item.body.setSelectedDataAsync(
+            Office.context.mailbox.item.body.setSelectedDataAsync(
               ' Kindly note we now open 7 days a week.',
-              {
-                coercionType: Office.CoercionType.Text,
-                asyncContext: {var3: 1, var4: 2}
-              },
+              { coercionType: Office.CoercionType.Text,
+                asyncContext: { var3: 1, var4: 2 } },
               function (asyncResult) {
                 if (asyncResult.status ==
-                  Office.AsyncResultStatus.Failed) {
+                  Office.AsyncResultStatus.Failed){
                   self.ngToast.danger({
                     content: 'Cant get a sender'
                   });
@@ -103,22 +106,24 @@ export class TemplatesController {
   }
 
   $onInit() {
-    let self = this;
-    this.$http.get('/api/templates')
-      .then(response => {
-        this.templates = response.data;
-      });
+    var self =this;
+    $.get('/mail/loft.pug').then(function(doc) {
+      var html = jade.compile(doc);
+
+      self.template = html;
+      console.info(self.template);
+    });
 
   }
 
 
 }
 
-export default angular.module('angularStartApp.templates', [uiRouter])
+export default angular.module('angularStartApp.loft', [uiRouter])
   .config(routing)
-  .component('templates', {
-    template: require('./templates.pug'),
-    controller: TemplatesController,
+  .component('loft', {
+    template: require('./loft.pug'),
+    controller: LoftController,
     controllerAs: 'vm'
   })
   .name;

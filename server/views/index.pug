@@ -7,6 +7,7 @@ html(lang='en')
     title ttt
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width')
+    script(type='text/javascript', src='https://appsforoffice.microsoft.com/lib/1/hosted/office.debug.js')
   body.ms-font-m.ms-welcome
     toast
     //if lt IE 9
@@ -16,13 +17,6 @@ html(lang='en')
         |  browser. Please
         a(href='http://browsehappy.com/') upgrade your browser
         |  to improve your experience.
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
     //navbar
     div.main.ms-welcome__main.ng-cloak(ui-view='')
     //footer
@@ -33,16 +27,7 @@ html(lang='en')
     script(type='text/javascript', src='/vendor.bundle.js')
     script(type='text/javascript', src='/polyfills.bundle.js')
     script(type='text/javascript', src='/app.bundle.js')
-    script(type='text/javascript', src='/office.js')
-    script(type='text/javascript').
-      (function () {
-        //require('script-loader!../office');
-        Office.initialize = function (reason) {
-          $(document).ready(function () {
-            window.item = Office.context.mailbox.item;
-            window._office = Office;
-          });
-        }
-      })();
+    input(ng-init=`sessionID='${sessionID}'`, value=sessionID ng-model='sessionID' type='hidden', name='sessionID', )
+    //script(type='text/javascript', src='https://appsforoffice.microsoft.com/lib/1/hosted/office.js')
 
-input(ng-init=`sessionID='${sessionID}'`, value=sessionID ng-model='sessionID' type='hidden', name='sessionID', )
+

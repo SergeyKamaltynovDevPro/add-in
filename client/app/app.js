@@ -21,10 +21,11 @@ import main from './main/main.component';
 
 import write from './write/write.component';
 import templates from './write/templates/templates.component';
+import loft from './write/loft/loft.component';
 
 import read from './read/read.component';
 import reminder from './read/reminder/reminder.component'
-
+import user from './read/user/user.component'
 
 import constants from './app.constants';
 import util from '../components/util/util.module';
@@ -38,14 +39,18 @@ import '!style!css!ng-toast/dist/ngToast.css';
 import '!style!css!ng-toast/dist/ngToast-animations.css';
 import './app.scss';
 angular.module('angularStartApp', [_Auth,ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-   main, write, read, reminder, templates, constants, socket, util, 'officeuifabric.core',
+   main, write, read, reminder, user, templates, loft, constants, socket, util, 'officeuifabric.core',
   'officeuifabric.components', 'ngToast', 'ngAnimate'
 ])
   .config(routeConfig)
 
 angular.element(document)
   .ready(() => {
-    angular.bootstrap(document, ['angularStartApp'], {
-      strictDi: true
-    });
+    Office.initialize = function (reason) {
+      delete window.history.pushState;
+      delete window.history.replaceState;
+      angular.bootstrap(document, ['angularStartApp'], {
+        strictDi: true
+      });
+    }
   });

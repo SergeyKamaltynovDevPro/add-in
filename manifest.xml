@@ -181,9 +181,9 @@
         <!--Read user-->
         <bt:Url id="messageReadUserTaskPaneUrl" DefaultValue="https://172.17.2.254:3000/read/"/>
         <!--Write template-->
-        <bt:Url id="messageWriteTemplateTaskPaneUrl" DefaultValue="https://172.17.2.254:3000/write/template/"/>
+        <bt:Url id="messageWriteTemplateTaskPaneUrl" DefaultValue="https://172.17.2.254:3000/write/templates/"/>
         <!--Write loft-->
-        <bt:Url id="messageWriteLoftTaskPaneUrl" DefaultValue="https://172.17.2.254:3000/write/loft"/>
+        <bt:Url id="messageWriteLoftTaskPaneUrl" DefaultValue="https://172.17.2.254:3000/write/loft/"/>
       </bt:Urls>
 
       <bt:ShortStrings>

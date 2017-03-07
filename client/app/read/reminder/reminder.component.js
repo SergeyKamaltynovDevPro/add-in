@@ -26,8 +26,8 @@ export class ReminderController {
     let data = {
       startDate : this.reminderDate,
       userProfile:  Office.context.mailbox.userProfile,
-      from: item.from,
-      subject: item.subject
+      from: Office.context.mailbox.item.from,
+      subject: Office.context.mailbox.item.subject
     };
     // let data = {
     //   startDate : this.reminderDate,

@@ -1,16 +1,48 @@
-//.userInfo(ng-hide='userNotExist')
-//  p.ms-font-l Current User
-//  ul.ms-List.ms-welcome__features.ms-u-slideUpIn10
-//    li.ms-ListItem
-//      | name: {{user.name}}
-//    li.ms-ListItem
-//      | email: {{user.email}}
-//    li.ms-ListItem
-//      | createdBy: {{user.createdBy.name}}
-//    li.ms-ListItem
-//      | createdAt: {{user.created}}
-//  button.ms-Button--primary.ms-Button(type='submit')
-//    span.ms-Button-label Send answer
+.userInfo
+  p.ms-font-l Current User
+  ul.ms-List.ms-welcome__features.ms-u-slideUpIn10
+    li.ms-ListItem
+      | name: {{vm.user.name}}
+    li.ms-ListItem
+      | email: {{vm.user.email}}
+    li.ms-ListItem
+      | createdBy: {{vm.user.createdBy.name}}
+    li.ms-ListItem
+      | createdAt: {{vm.user.created}}
+  p.ms-font-l Lofts
+  ul.ms-List
+    div(ng-repeat='loft in vm.lofts track by loft._id')
+      | '{{loft.text}}' opened {{loft.count}} times
+
+
+uif-persona-card(uif-style='round', uif-size='small', uif-presence='dnd', uif-image-url='Persona.Person2.png')
+  uif-persona-card-primary-text {{vm.user.name}}
+  uif-persona-card-secondary-text Interior Designer, Contoso
+  uif-persona-card-tertiary-text Office: 7/1234
+  uif-persona-card-optional-text Available - Video capable
+  uif-persona-card-action(uif-icon='MailReplyAllMirrored', uif-placeholder='regular')
+    uif-persona-card-detail-line
+      uif-persona-card-detail-label Lync:
+      uif-link(ng-href='#') Start Lync call
+  uif-persona-card-action(uif-icon='phone', uif-placeholder='regular')
+    uif-persona-card-detail-line
+      uif-persona-card-detail-label Personal:
+      |  555.206.2443
+    uif-persona-card-detail-line
+      uif-persona-card-detail-label Work:
+      |  555.929.8240
+  uif-persona-card-action(uif-icon='mail', uif-placeholder='regular')
+    uif-persona-card-detail-line
+      uif-persona-card-detail-label Work:
+      uif-link(ng-href='vm.user.email') {{vm.user.email}}
+  uif-persona-card-action(uif-icon='org', uif-placeholder='topright')
+    // Org chart
+  uif-persona-card-action(uif-placeholder='overflow')
+    | View profile on Delve
+
+
+//button.ms-Button--primary.ms-Button(type='submit')
+//  span.ms-Button-label Send answer
 //form.ms-form(name='saveTemplateData', action='#', ng-submit='home.createUser()', ng-hide='!userNotExist')
 //  h2 create new user
 //  .ms-TextField

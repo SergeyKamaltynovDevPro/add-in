@@ -15,8 +15,9 @@ export default function(app) {
   // Insert routes below
   // app.use('/api/things', require('./api/thing'));
   // app.use('/api/users', require('./api/user'));
-
+  app.use('/api/pixel', require('./api/pixel'));
   app.use('/api', jsonServer.router(require('./api/db.json')));
+
 
   app.use('/connect', require('./auth/connect'));
   app.use('/disconnect', require('./auth/disconnect'));

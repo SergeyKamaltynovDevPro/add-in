@@ -1,0 +1,10 @@
+form.ms-form(name='saveTemplateData', action='#', ng-submit='vm.createUser()')
+  h2 create new user
+  .ms-TextField
+    label.ms-Label(for='name') User name:
+    input#name.ms-TextField-field(type='text', name='name', ng-model='vm.name')
+  .ms-TextField
+    label.ms-Label(for='mail') Email :
+    input#mail.ms-TextField-field(type='text', name='email', ng-model='vm.email')
+  button.ms-Button--primary.ms-Button(type='submit')
+    span.ms-Button-label Create user
