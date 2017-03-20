@@ -70,9 +70,7 @@ export class TemplatesController {
 
                 }
                 else {
-                  // Successfully set data in item body.
-                  // Do whatever appropriate for your scenario,
-                  // using the arguments var3 and var4 as applicable.
+                  self.ngToast.create('Template added to mail body');
                 }
               });
           }
@@ -92,9 +90,7 @@ export class TemplatesController {
                   });
                 }
                 else {
-                  // Successfully set data in item body.
-                  // Do whatever appropriate for your scenario,
-                  // using the arguments var3 and var4 as applicable.
+                  self.ngToast.create('Template added to mail body');
                 }
               });
           }

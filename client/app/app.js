@@ -32,9 +32,11 @@ import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
 
 import './app.scss';
-
-import '!style!css!office-ui-fabric/dist/css/fabric.components.css';
+// import '!style!css!office-ui-fabric-core/dist/css/fabric.css';
 import '!style!css!office-ui-fabric/dist/css/fabric.min.css';
+import '!style!css!office-ui-fabric/dist/css/fabric.components.css';
+
+
 import '!style!css!ng-toast/dist/ngToast.css';
 import '!style!css!ng-toast/dist/ngToast-animations.css';
 import './app.scss';
@@ -42,6 +44,14 @@ angular.module('angularStartApp', [_Auth,ngCookies, ngResource, ngSanitize, 'btf
    main, write, read, reminder, user, templates, loft, constants, socket, util, 'officeuifabric.core',
   'officeuifabric.components', 'ngToast', 'ngAnimate'
 ])
+  .config(['ngToastProvider', function(ngToast) {
+    ngToast.configure({
+      verticalPosition: 'bottom',
+      horizontalPosition: 'right',
+      combineDuplications: true,
+      maxNumber: 3
+    });
+  }])
   .config(routeConfig)
 
 angular.element(document)

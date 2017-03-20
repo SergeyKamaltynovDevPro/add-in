@@ -3,8 +3,9 @@ import uiRouter from 'angular-ui-router';
 import routing from './loft.routes';
 export class LoftController {
   /*@ngInject*/
-  constructor($http, $scope, socket, $rootScope, ngToast) {
+  constructor($http, $scope, socket, $rootScope, ngToast, $timeout) {
     this.$http = $http;
+    this.$timeout = $timeout;
     this.socket = socket;
     this.lofttext =null;
     this.ngToast =ngToast;
@@ -15,33 +16,18 @@ export class LoftController {
 
   insertLoft(){
     let self =this;
-      Office.context.mailbox.item.to.getAsync(callback);
-      function callback(asyncResult) {
-        if(!asyncResult.value.length){
-          self.ngToast.danger({
-            content: 'Cant get a sender'
-          });
-          return
-        }
+    function doDialog() {
+      var url = 'https://172.17.2.254:3000/write/loft/';
+      var dialogOptions = { width: 425, height: 425, displayInIframe:false};
 
-        var displayName = asyncResult.value[0].displayName;
-        var emailAddress = asyncResult.value[0].emailAddress;
-        self.$http({
-          url: '/api/pixel',
-          method: "GET",
-          params: {email: asyncResult.value[0].emailAddress,text: self.lofttext}
-        }).then(response => {
-          var locals = {
-            name: displayName,
-            mail: emailAddress
-          };
-          var result = self.template({pixel:response.data.pxl});
-          self.setItemBody(result);
-          // var result = html(locals);
-          // self.setItemBody(result);
-        });
+      Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
+        // In the callback, save the dialog object
+        var dialog = result.value;
 
-      }
+
+      });
+    }
+    doDialog();
 
 
   }
@@ -51,9 +37,9 @@ export class LoftController {
     Office.context.mailbox.item.body.getTypeAsync(
       function (result) {
         if (result.status == Office.AsyncResultStatus.Failed){
-          self.ngToast.danger({
+          self.$timeout(()=>{self.ngToast.danger({
             content: 'Cant get a sender'
-          });
+          })});
         }
         else {
           // Successfully got the type of item body.
@@ -69,15 +55,14 @@ export class LoftController {
               function (asyncResult) {
                 if (asyncResult.status ==
                   Office.AsyncResultStatus.Failed){
-                  self.ngToast.danger({
+                  self.$timeout(()=>{self.ngToast.danger({
                     content: 'Cant get a sender'
-                  });
+                  })});
+
 
                 }
                 else {
-                  // Successfully set data in item body.
-                  // Do whatever appropriate for your scenario,
-                  // using the arguments var3 and var4 as applicable.
+                  self.$timeout(()=>{self.ngToast.create('Code added to mail body')});
                 }
               });
           }
@@ -90,14 +75,12 @@ export class LoftController {
               function (asyncResult) {
                 if (asyncResult.status ==
                   Office.AsyncResultStatus.Failed){
-                  self.ngToast.danger({
+                  self.$timeout(()=>{self.ngToast.danger({
                     content: 'Cant get a sender'
-                  });
+                  })});
                 }
                 else {
-                  // Successfully set data in item body.
-                  // Do whatever appropriate for your scenario,
-                  // using the arguments var3 and var4 as applicable.
+                  self.$timeout(()=>{self.ngToast.create('Code added to mail body')});
                 }
               });
           }
@@ -106,12 +89,11 @@ export class LoftController {
   }
 
   $onInit() {
+
     var self =this;
     $.get('/mail/loft.pug').then(function(doc) {
       var html = jade.compile(doc);
-
       self.template = html;
-      console.info(self.template);
     });
 
   }

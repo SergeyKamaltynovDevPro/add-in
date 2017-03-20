@@ -18,13 +18,11 @@ let pxl = new PxlMongodb({
 });
 pxl.connect('mongodb://localhost:27017/test', {}) // Passed values are the defaults
   .then((collections) => {
-      collections.pxls.stats().then(function(stat){
-        console.info(stat);
-      })
-
+      // collections.pxls.stats().then(function(stat){
+      // })
     // collections.lists.stats().then(console.dir)
-
   });
+
 // Setup server
 var app = express();
 var server = https.createServer(certConf, app);

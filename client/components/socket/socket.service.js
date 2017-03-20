@@ -18,11 +18,9 @@ function Socket(socketFactory, Auth) {
   });
   ioSocket.on('connect', function () {
     ioSocket.emit('getUser', '', function (data) {
-      console.info(data);
       Auth.setUser(data.data.providers[0]);
     });
     ioSocket.on('auth_success', (data) =>{
-      console.info(data);
       Auth.setUser(data);
     });
   });
